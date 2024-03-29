@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color:#A42D8A;
+        }
+        span
+        {
+            width: 60vb;
+            text-align: center;
+            justify-content: center;
+            margin-top: 50px;
+           
+           
+        }
+        div{
+           
+            width: 50vb;
+            height: 50%;
+            justify-content: center;
+            text-align: center;
+            margin-top: 30px;
+
+        }
+        
+        .box{
+            width: 15vb;
+            height: 90px;
+            text-align: center;
+            background-color: white;
+            border: 1px solid black;
+            border-radius: 5px;
+            margin-left: 2px;
+            margin-bottom: 5px;
+            font-size: 50px;
+            color: red;
+            
+        
+
+        }
+        .box:hover {
+            width: 16vb;
+  box-shadow: 0px 12px 16px 3px rgba(21, 200, 173, 0.954),0 7px 5px 0 rgba(0,0,0,0.19);
+  rotate: 15deg;
+  }
+    </style>
+</head>
+<body>
+    <span>
+        <h1 style="margin-top: 10vh; text-transform: capitalize; color: whitesmoke; text-shadow: 10px 10px 10px black;">tic-tac-toe  game</h1>
+        <center>
+    <div>
+        <p id="msg" style="font-size: 50px; color: aquamarine; text-transform: capitalize; text-shadow: 10px 10px 10px black;"> </p>
+        <p id="ms" style="font-size: 50px; color: aquamarine; text-transform: capitalize; text-shadow: 10px 10px 10px black;"> </p>
+        <button  class="box"></button>
+        <button  class="box"></button>
+        <button  class="box"></button>
+        <button  class="box"></button>
+        <button  class="box"></button>
+        <button  class="box"></button>
+        <button  class="box"></button>
+        <button  class="box"></button>
+        <button  class="box"></button>
+    
+    </div>
+    <button style="margin-top: 2vh; background-color: white; border: 2px solid black; width: 200px;word-spacing: 20px; text-transform: capitalize; border-radius: 30px; height: 50px; box-shadow: 0px 10px 10px black;" class="reset">reset game</button>
+    </center>
+    </span>
+    <script>
+        let b=document.querySelectorAll(".box");
+        let r=document.querySelector(".reset");
+        let winner=document.querySelector("#msg");
+        let no=document.querySelector("#ms");
+        
+        
+        const res=()=>{
+            turno=true;
+            en();
+
+        };
+       
+        let turno=true;
+        let win=[
+            [0,1,2],
+            [0,3,6],
+            [0,4,8],
+            [1,4,7],
+            [2,5,8],
+            [2,4,6],
+            [3,4,5],
+            [6,7,8],
+        ];
+        b.forEach((box) => {
+            box.addEventListener("click",()=>{
+                console.log("you are try to click");
+                if(turno==true){
+                    box.innerText="0";
+                    console.log(box);
+                    box.style.color="green";
+                    
+                    
+                    
+turno=false;
+                    
+                }
+                else{
+                    box.innerText="x";
+                    turno=true;
+                    
+
+                }
+box.disabled=true;
+check();
+            });
+
+
+        });
+        const dis=()=>{
+            for(let box of b)
+            {
+                box.disabled=true;
+            }
+
+        };
+        const en=()=>{
+            for(let box of b)
+            {
+                box.disabled=false;
+                box.innerHTML="";
+                
+            }
+
+        };
+        const wi=(winnero)=>
+        {
+            let wi="congratulations winner is "
+winner.innerHTML= wi+(winnero);
+winner.style.visiblity = "visible";
+        }
+        const check=()=>{
+            for(let pattren of win){
+                //console.log(pattren);
+               // console.log(pattren[0],pattren[1],pattren[2]);
+              /*  console .log(
+                    b[pattren[0]].innerHTML,
+                    b[pattren[1]].innerHTML,
+                    b[pattren[2]].innerHTML,
+
+                );*/
+                let po= b[pattren[0]].innerHTML;
+                let pq= b[pattren[1]].innerHTML;
+                let pe= b[pattren[2]].innerHTML;
+                if(po!=""&&pq!=""&& pe!="")
+                {
+                    if(po==pq&&pq==pe)
+                    {
+                        console.log("winnwr" ,po);
+
+
+                        dis();
+                        wi(po);
+                    }
+                   
+                    
+                }
+            }
+        }
+   r.addEventListener("click",res);
+   nobody=(cant)=>
+   {
+no.innerHTML="nobody win ";
+   }
+   
+    </script>
+</body>
+</html>

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: whitesmoke;
+        }
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        img{
+            width: 150px;
+            height: 150px;
+            margin-right: 20px;
+            margin-top: 5vh;
+            border-radius: 100px;
+        }
+        img:hover{
+            rotate: 45deg;
+            
+        
+        }
+        img:active{
+            box-shadow: 10px 10px 5px lightblue  inset;
+            box-shadow: 10px 10px 10px rgb(235, 25, 203) ;
+            
+        
+        }
+        h1{
+            text-align: center;
+            text-transform: capitalize;
+            line-height: 100px;
+            background-color: rgb(255, 0, 234);
+            color: white;
+            text-shadow: 10px 10px 10px black;
+        animation: vishal infinite 3s;
+        
+        }
+    @keyframes vishal{
+        50%{
+            text-shadow: 20px 10px 10px green;
+        }
+        100%{
+            background-color: white;
+            color: black;
+            text-shadow: 0 0 3px #FF0000, 0 0 5px #0000FF;
+        }
+    }
+    #more{
+        margin-top: 10px;
+        font-size: 20px;
+        text-transform: capitalize;
+        text-decoration: none;
+        font-style: italic;
+
+        
+    }
+    #more:hover{
+        color: blue;
+    }
+    .timer{
+        font-size: 40px;
+        color: red;
+    }
+
+
+
+    </style>
+</head>
+<body>
+    <div>
+    <h1>rock paper scissors</h1>
+    <center>
+    <img src="data:image/jpeg;base64,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" class="ch" id="scissors"/>
+    <img src="https://img.tapimg.net/market/images/330e1cff434a3a0d4223df04316c8b35.jpg/appicon"  class="ch" id="rock"/>
+    <img src="https://sihoonathan.github.io/rock-paper-scissors/assets/img/paper2.png" class="ch" id="paper"/></center >
+
+
+    
+</div>
+<script> let r=prompt("enter your name ")
+
+document.write("<center><h2>Bitter enemy</h2><center>" +r+ " " +" vs" +" "+"<b style='font-size:30px; margin-top=50px;'>Vishal</b>");
+</script>
+
+<div style="display: flex; justify-content: center;
+align-items: center;">
+<p style="word-spacing: 70px; font-size: 50px; margin-right: 70px;"> 0 </p> <div style="display: flex; text-align: center;"><span style="word-spacing: 70px; font-size: 50px;">0</span>
+    </div>
+</div>
+<div class="timer">
+    <span id="minutes">01</span>:<span id="seconds">00</span>
+  </div>
+<h3 style="margin-top: 20px; width: 50vb; height: 35px; background-color: black; color: white; line-height: 2rem; border-radius: 10px;">play your move</h3>
+<p id="more"> <a href="tik.html"> more games</p></a>
+<script>
+    let user=0;
+    let vishu=0;
+    const u=document.querySelector("p");
+    console.log(u);
+    const v=document.querySelector("span");
+    console.log(v);
+    const choice=document.querySelectorAll(".ch");
+    const msg=document.querySelector("h3");
+    console.log(msg);
+    const vis=(chintuid)=>{
+         const option=["rock","paper","scissors"];
+         const re=Math.floor(Math.random()*3);
+console.log(re);
+         return option[re];
+    }
+    const showwiner=(userwin  ,chintuid,ret)=>{
+        if(userwin){
+            user++;
+u.innerText=user;
+            msg.innerText=`you win ${chintuid} beats ${ret}`;
+            msg.style.backgroundColor="green";
+        }
+        else{
+            vishu++;
+            v.innerText=vishu;
+            msg.innerText=`vishal win  ${ret} beats ${chintuid}`;
+            msg.style.backgroundColor="red";
+        }
+
+    }
+    const playgame=(chintuid)=>{
+        console.log("user choice"+chintuid);
+        const ret=vis();
+        console.log("vishal choice"+ret);
+        if(chintuid==ret){
+            msg.innerText="match draw";
+            msg.style.backgroundColor="pink";
+        }else{
+            let userwin=true;
+            if(userwin=="rock"){
+                userwin=ret=="paper"?false: true;
+            } else if(userwin=="paper"){
+                userwin=ret=="scissors"?false:true;
+            }
+            else{
+                userwin=ret=="rock"?false:true;
+            }
+            showwiner(userwin ,chintuid,ret);
+
+        }
+
+    }
+    choice.forEach((chintu)=>{
+        chintu.addEventListener("click",()=>{
+            const chintuid=chintu.getAttribute("id");
+            console.log("btn was clicked");
+           // alert("you are choice"+" "+chintuid);
+            playgame(chintuid);
+
+        })
+
+    })
+
+    document.addEventListener('DOMContentLoaded', function() {
+  var secondsDisplay = document.getElementById('seconds');
+  var minutesDisplay = document.getElementById('minutes');
+
+  var totalSeconds = 60;
+
+  function updateTimer() {
+    var minutes = Math.floor(totalSeconds / 60);
+    var seconds = totalSeconds % 60;
+
+    minutes = String(minutes).padStart(2, '0');
+    seconds = String(seconds).padStart(2, '0');
+
+    minutesDisplay.textContent = minutes;
+    secondsDisplay.textContent = seconds;
+
+    if (totalSeconds <= 0) {
+      clearInterval(timerInterval);
+      alert('time is up');
+      chintuid.disabled=true;
+    
+    } 
+    
+    else {
+      totalSeconds--;
+    }
+  }
+
+  updateTimer();
+  var timerInterval = setInterval(updateTimer, 1000);
+});
+
+</script>
+
+</body>
+</html>
